@@ -6,7 +6,7 @@ from PIL import Image
 app = Flask(__name__)
 
 class ImageClassifier:
-    def __init__(self, model_path='mobilenet_v2.pt', class_labels_path='class_labels.txt'):
+    def __init__(self, model_path='../mobilenet_v2.pt', class_labels_path='../class_labels.txt'):
         self.model = torch.load(model_path, map_location=torch.device('cpu'))
         self.model.eval()
         self.transform = transforms.Compose([
